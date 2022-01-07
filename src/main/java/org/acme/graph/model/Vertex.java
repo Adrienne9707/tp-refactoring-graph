@@ -35,9 +35,18 @@ public class Vertex {
 	 */
 	private boolean visited;
 
-	public Vertex() {
 
-	}
+	/**
+	 * mask
+	 */
+
+	/*public Vertex() {
+
+	}*/
+	protected Vertex(){}
+
+
+
 
 	public String getId() {
 		return id;

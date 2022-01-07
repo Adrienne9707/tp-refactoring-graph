@@ -20,6 +20,12 @@ public class Graph {
 	 */
 	private List<Vertex> vertices = new ArrayList<>();
 
+
+	/**
+	 * vertex
+	 */
+	//private Vertex vertex;
+
 	/**
 	 * Liste des arcs
 	 */
@@ -34,14 +40,21 @@ public class Graph {
 		return vertices;
 	}
 
+
+
+
+	
 	/**
 	 * Récupération de la liste arcs
-	 * 
+	 * Suppression
 	 * @return
-	 */
+	 
 	public void setVertices(List<Vertex> vertices) {
 		this.vertices = vertices;
-	}
+	}*/
+
+
+
 
 	/**
 	 * Recherche d'un sommet par identifiant
@@ -58,6 +71,9 @@ public class Graph {
 		throw new NotFoundException(String.format("Vertex '%s' not found", id));
 	}
 
+	
+	
+	
 	/**
 	 * Recherche d'un sommet par égalité stricte de coordonnées
 	 * 
@@ -74,6 +90,9 @@ public class Graph {
 		throw new NotFoundException(String.format("Vertex not found at [%s,%s]", coordinate.x, coordinate.y));
 	}
 
+	
+	
+	
 	/**
 	 * Récupération ou création d'un sommet en assurant l'unicité
 	 * 
@@ -86,7 +105,7 @@ public class Graph {
 		try {
 			vertex = findVertex(coordinate);
 		} catch (NotFoundException e) {
-			/* création d'un nouveau sommet car non trouvé */
+			//création d'un nouveau sommet car non trouvé 
 			vertex = new Vertex();
 			vertex.setId(Integer.toString(getVertices().size()));
 			vertex.setCoordinate(coordinate);
@@ -94,6 +113,28 @@ public class Graph {
 		}
 		return vertex;
 	}
+
+
+
+	/**
+	 * Ajout d'une fabrique
+	 * @param coordinate
+	 * @param id
+	 * @return
+	 */
+
+	public Vertex createVertex(Coordinate coordinate, String id){
+		Vertex vertex = new Vertex();
+		vertex.setId(id);
+		vertex.setCoordinate(coordinate);
+		this.getVertices().add(vertex);
+		
+		return vertex ;
+		 
+	 }
+
+
+
 
 	/**
 	 * Récupération de la liste des arcs
@@ -103,6 +144,23 @@ public class Graph {
 	public Collection<Edge> getEdges() {
 		return edges;
 	}
+
+
+	/**
+	 * créer edges
+	 * 
+	 * @return
+	 */
+	public Edge createEdge(Vertex source, Vertex target, String id){
+		Edge edge = new Edge(source, target);
+		edge.setId(id);
+		this.getEdges().add(edge);
+		
+		return edge;
+	}
+
+
+
 
 	/**
 	 * Recherche des arcs sortant d'un sommet
@@ -140,11 +198,15 @@ public class Graph {
 
 	/**
 	 * Définition de la liste des arcs
-	 * 
+	 * Suppression 
 	 * @param edges
-	 */
+	 
 	public void setEdges(List<Edge> edges) {
 		this.edges = edges;
-	}
+	}*/
+
+
+
+	
 
 }

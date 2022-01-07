@@ -39,11 +39,22 @@ public class Edge {
 
 	}*/
 
-	/*add constructor */
+	/*
+	*add constructor 
 	public Edge(Vertex source, Vertex target){
 		this.source = source;
 		this.target = target;
+	}*/
+	/**
+	 * mask constructor
+	 */
+	protected Edge(Vertex source, Vertex target){
+		this.source = source;
+		this.target = target;
 	}
+
+
+
 
 	public String getId() {
 		return id;
