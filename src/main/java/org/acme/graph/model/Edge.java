@@ -57,6 +57,7 @@ public class Edge {
 	}*/
 	/**
 	 * mask constructor
+	 * Remplissage automatique de inEDges et outEdges
 	 */
 	protected Edge(Vertex source, Vertex target){
 		if(source == null || target == null){
@@ -64,6 +65,9 @@ public class Edge {
 		}else{
 			this.source = source;
 			this.target = target;
+
+			source.getOutEdges().add(this);
+			target.getInEdges().add(this);
 		}
 		
 	}
@@ -90,9 +94,17 @@ public class Edge {
 		return source;
 	}
 
+
+	/**
+	 * suppression
+	 * @param source
+	 
+
 	public void setSource(Vertex source) {
 		this.source = source;
-	}
+	}*/
+
+
 
 	/**
 	 * Cible avec rendu JSON sous forme d'identifiant
@@ -105,9 +117,19 @@ public class Edge {
 		return target;
 	}
 
+
+
+	/**
+	 * suppression
+	 * @param target
+	 
+
 	public void setTarget(Vertex target) {
 		this.target = target;
-	}
+	}*/
+
+
+
 
 	/**
 	 * dijkstra - coût de parcours de l'arc (distance géométrique)

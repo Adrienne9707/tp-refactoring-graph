@@ -169,14 +169,15 @@ public class Graph {
 	 * @return
 	 */
 	public List<Edge> getInEdges(Vertex vertex) {
-		List<Edge> result = new ArrayList<>();
+		/*List<Edge> result = new ArrayList<>();
 		for (Edge candidate : edges) {
 			if (candidate.getTarget() != vertex) {
 				continue;
 			}
 			result.add(candidate);
 		}
-		return result;
+		return result;*/
+		return vertex.getInEdges();
 	}
 
 	/**
@@ -186,14 +187,15 @@ public class Graph {
 	 * @return
 	 */
 	public List<Edge> getOutEdges(Vertex vertex) {
-		List<Edge> result = new ArrayList<>();
+		/*List<Edge> result = new ArrayList<>();
 		for (Edge candidate : edges) {
 			if (candidate.getSource() != vertex) {
 				continue;
 			}
 			result.add(candidate);
 		}
-		return result;
+		return result;*/
+		return vertex.getOutEdges();
 	}
 
 	/**
